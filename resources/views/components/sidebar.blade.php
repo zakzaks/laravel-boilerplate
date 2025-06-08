@@ -19,7 +19,7 @@
                 $formActive =
                     request()->is('form') ||
                     request()->is('form/add') ||
-                    request()->is('form/edit') ||
+                    request()->is('form/edit/*') ||
                     request()->is('form/read');
             @endphp
             <li>
@@ -52,8 +52,8 @@
                         </a>
                     </li>
                     <li>
-                        <a href="{{ route('form.edit') }}"
-                            class="{{ request()->is('form/edit') ? 'bg-gray-100  dark:bg-gray-700 dark:text-white' : 'text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700' }} flex items-center p-2 pl-11 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Edit
+                        <a href="{{ route('form.edit', ['id' => 1]) }}"
+                            class="{{ request()->is('form/edit/*') ? 'bg-gray-100  dark:bg-gray-700 dark:text-white' : 'text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700' }} flex items-center p-2 pl-11 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Edit
                         </a>
                     </li>
                 </ul>
